@@ -17,4 +17,4 @@
 * Стереть всё. Как в матрице)
 
 
-*author: zalatoff / skeych
+author: **zalatoff** / **skeych**
