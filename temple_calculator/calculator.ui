@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>calculator</class>
  <widget class="QWidget" name="calculator">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -279,7 +282,7 @@
     <string notr="true">QPushButton
 {
 border-radius: 25;
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 0, 255), stop:0.166 rgba(255, 255, 0, 255), stop:0.333 rgba(0, 255, 0, 255), stop:0.5 rgba(0, 255, 255, 255), stop:0.666 rgba(0, 0, 255, 255), stop:0.833 rgba(255, 0, 255, 255), stop:1 rgba(255, 0, 0, 255))
+background-color:grey;
 }
 </string>
    </property>

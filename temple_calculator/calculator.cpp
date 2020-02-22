@@ -8,8 +8,9 @@ calculator::calculator(QWidget *parent)
     , ui(new Ui::calculator)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
 }
-QString action;
+char action;
 double firstnum;
 bool isPushed = false;
 calculator::~calculator()
@@ -27,7 +28,7 @@ void calculator::on_pushButton_clicked()
 
 void calculator::on_pushButton_11_clicked()
 {
-    action = "+";
+    action = '+';
     firstnum= ui->lineEdit->text().toDouble();
     ui->lineEdit->setText("");
     //ui->lineEdit->setText(QString::number(firstnum) + " + ");
@@ -46,19 +47,27 @@ void calculator::on_pushButton_12_clicked()
 {
     double second,temp = 0;
     second = ui->lineEdit->text().toDouble();
-    if(action != ""){
-    if(action == "+")
-        temp = firstnum + second;
-    else if(action == "*")
-        temp = firstnum * second;
-    else if(action == "/")
-        temp = firstnum / second;
-    else if(action == "%")
-        temp = firstnum * 0.01;
-    else if(action == "-")
-        temp = firstnum - second;
+//    if(action != '\0'){
+//    if(action == '+')
+//        temp = firstnum + second;
+//    else if(action == '*')
+//        temp = firstnum * second;
+//    else if(action == '/')
+//        temp = firstnum / second;
+//    else if(action == '%')
+//        temp = firstnum * 0.01;
+//    else if(action == "]-")
+//        temp = firstnum - second;
+//    }
+   // else ui->lineEdit->setText("Молодец, рукожоп, что-то да не работает..");
+    switch(action)
+    {
+        case '+':temp = firstnum + second;break;
+        case '-':temp = firstnum - second;break;
+        case '*':temp = firstnum * second;break;
+        case '/':temp = firstnum / second;break;
+        case '%':temp = firstnum *0.01;break;
     }
-    else ui->lineEdit->setText("Молодец, рукожоп, что-то да не работает..");
         ui->lineEdit->setText("");
        ui->lineEdit->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
          ui->lineEdit->setText(QString::number(temp));
@@ -122,7 +131,7 @@ void calculator::on_pushButton_9_clicked()
 
 void calculator::on_pushButton_13_clicked()
 {
-    action = "/";
+    action = '/';
     firstnum= ui->lineEdit->text().toDouble();
     ui->lineEdit->setText("");
     isPushed = true;
@@ -130,7 +139,7 @@ void calculator::on_pushButton_13_clicked()
 
 void calculator::on_pushButton_14_clicked()
 {
-    action = "*";
+    action = '*';
     firstnum= ui->lineEdit->text().toDouble();
     ui->lineEdit->setText("");
 
@@ -139,14 +148,14 @@ void calculator::on_pushButton_14_clicked()
 
 void calculator::on_pushButton_15_clicked()
 {
-    action = "%";
+    action = '%';
     firstnum= ui->lineEdit->text().toDouble();
     ui->lineEdit->setText("");
 }
 
 void calculator::on_pushButton_16_clicked()
 {
-    action = "-";
+    action = '-';
     firstnum = ui->lineEdit->text().toDouble();
     ui->lineEdit->setText("");
     isPushed = true;
