@@ -17,7 +17,7 @@
 * Стереть всё. Как в матрице)
 
 
-author: **zalatoff** / **skeych**
+author: **me**
 
 v0.1:
 * Перевёл всё с супер-технологии if else if на switch
